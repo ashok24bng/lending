@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Lending App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Lending App</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/dashboard.html" class="nav-link active">Dashboard</a>
+                <button class="nav-link" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="container dashboard-container">
+        <div class="dashboard-grid">
+            <!-- User Profile Card -->
+            <div class="dashboard-card">
+                <h2>Your Profile</h2>
+                <div class="profile-info">
+                    <p><strong>Name:</strong> <span id="userName"></span></p>
+                    <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                    <p><strong>Referral Code:</strong> <span id="userReferralCode"></span></p>
+                    <p><strong>Referral Count:</strong> <span id="userReferralCount"></span></p>
+                    <p><strong>Referral Earnings:</strong> Rs <span id="userReferralEarnings"></span></p>
+                    <button id="withdrawReferralBtn" class="btn btn-primary" style="display: none;">
+                        Withdraw Referral Earnings
+                    </button>
+                </div>
+            </div>
+
+            <!-- Create Lending Card -->
+            <div class="dashboard-card">
+                <h2>Create New Lending</h2>
+                <form id="createLendingForm" class="lending-form">
+                    <div class="form-group">
+                        <label for="amount">Amount (Rs)</label>
+                        <input type="number" id="amount" name="amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label>UPI Payment</label>
+                        <div class="upi-container">
+                            <img src="upi-qr.png" alt="UPI QR Code" class="upi-qr">
+                            <p class="upi-details">UPI ID: example@upi</p>
+                            <p class="upi-amount">Amount: Rs <span id="displayAmount">0</span></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentScreenshot">Payment Screenshot</label>
+                        <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+                        <small class="form-text">Upload screenshot of successful payment</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="createLendingBtn">
+                        <span id="createLendingBtnText">Submit Payment</span>
+                        <span id="createLendingBtnSpinner" class="spinner" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Referral Link Card -->
+            <div class="dashboard-card">
+                <h2>Your Referral Link</h2>
+                <div class="referral-link-container">
+                    <input type="text" id="referralLink" readonly>
+                    <button id="copyReferralLinkBtn" class="btn btn-secondary">
+                        <span class="material-icons">content_copy</span>
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lending Transactions -->
+            <div class="dashboard-card full-width">
+                <h2>Your Lending Transactions</h2>
+                <div class="table-responsive">
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Amount</th>
+                                <th>Interest Rate</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Interest Earned</th>
+                                <th>Total Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsTableBody">
+                            <!-- Transactions will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Withdraw Dialog -->
+    <div id="withdrawDialog" class="dialog" style="display: none;">
+        <div class="dialog-content">
+            <h3>Confirm Withdrawal</h3>
+            <p>Are you sure you want to withdraw Rs <span id="withdrawAmount"></span>?</p>
+            <div class="dialog-actions">
+                <button class="btn btn-secondary" id="cancelWithdrawBtn">Cancel</button>
+                <button class="btn btn-primary" id="confirmWithdrawBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Container -->
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 

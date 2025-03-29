@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Lending App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Lending App</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/login.html" class="nav-link active">Login</a>
+                <a href="/register.html" class="nav-link">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>Login</h1>
+            <div id="errorAlert" class="alert alert-error" style="display: none;"></div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                    <span id="loginBtnText">Login</span>
+                    <span id="loginBtnSpinner" class="spinner" style="display: none;"></span>
+                </button>
+            </form>
+            <p class="auth-link">
+                Don't have an account? <a href="/register.html">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Alert Container -->
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html> 

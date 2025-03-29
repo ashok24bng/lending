@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lending App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Lending App</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/login.html" class="nav-link" id="loginLink">Login</a>
+                <a href="/register.html" class="nav-link" id="registerLink">Register</a>
+                <a href="/dashboard.html" class="nav-link" id="dashboardLink" style="display: none;">Dashboard</a>
+                <button class="nav-link" id="logoutBtn" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Grow Your Money</h1>
+                    <p>Earn up to 50% interest on your investments</p>
+                    <button class="cta-button" id="getStartedBtn">Get Started</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2425&q=80" alt="Investment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="material-icons">savings</span>
+                    <h3>High Interest Rates</h3>
+                    <p>Earn up to 50% interest on your investments with our referral program.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons">groups</span>
+                    <h3>Refer & Earn</h3>
+                    <p>Get Rs 500 for each referral and increase your interest rate to 50% with 3 referrals.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons">security</span>
+                    <h3>Secure & Reliable</h3>
+                    <p>Your investments are safe with our 30-day lending period and guaranteed returns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Investing?</h2>
+            <p>Join thousands of investors who are already earning with our platform</p>
+            <button class="cta-button" id="startInvestingBtn">Start Investing Now</button>
+        </div>
+    </section>
+
+    <!-- Alert Container -->
+    <div id="alertContainer" class="alert-container"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
